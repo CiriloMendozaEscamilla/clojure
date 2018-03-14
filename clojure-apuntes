@@ -1,0 +1,9 @@
+FUNCIONES DE ORDEN SUPERIOR
+
+some? ------>alguno???
+every?------>todos???
+not-every?-->no todos??
+not-any?---->ninguno???
+
+https://clojuredocs.org/clojure.core
+https://clojure.org/api/cheatsheet
