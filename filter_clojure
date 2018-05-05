@@ -1,0 +1,8 @@
+(filter even? (range 10))
+(filter (fn [x]
+  (= (count x) 1))
+  ["a" "aa" "b" "n" "f" "lisp" "clojure" "q" ""])
+  
+(filter #(= (count %) 1)
+  ["a" "aa" "b" "n" "f" "lisp" "clojure" "q" ""])
+  
