@@ -1,0 +1,14 @@
+<pre>
+<code>
+(defn puertas[x]
+     (into [](take x(repeat [false]))))
+
+(defn cambio[v n](map(fn[x]
+                          (case (rem x n)
+                            0 (if(true? (v (dec x))) false true)
+                            (v (dec x))))
+                        (range 1 (inc(count v)))))
+</code>
+</pre>
+
+
