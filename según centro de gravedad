@@ -1,0 +1,11 @@
+(defn antes[a y](reduce concat(map (fn[z](conj '() ((into [] a) z)))(range 0 (dec y)))))
+
+(defn enmedio[a y](conj '()((into [] a) (- y 1))))
+
+(defn fin[a y](reduce concat(map (fn[z](conj '() ((into [] a) z)))(range y (count a)))))
+
+(defn mapa[x](map (fn[y][(antes x y)(enmedio x y)(fin x y)])(range 2 (count x))))
+
+(defn centro-de-gravedad[x]
+     (if (or(list? x)(vector? x))
+     (reduce concat(map(fn[b](if (==(apply +(first b))(apply +(first(rest(rest b)))))b '()))(mapa x))) '() ))
