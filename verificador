@@ -10,7 +10,8 @@
 
 (defn dijitos11[n](or(and(or(= 11(count (into [](sequence (str (or(and (integer? n)n)"n"))))))))))
 
-(defn redondeo[n](-(*(rem n 10)10)n))
+//(defn redondeo[n](-(*(rem n 10)10)n))
+(defn redondeo[n](-(*(+ 1(quot n 10))10)n))
 
 (defn cuando10[n](or(and (dijitos10 n)
                                 (+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
