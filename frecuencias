@@ -1,0 +1,3 @@
+(defn frecuencias[v]
+  (into {}(map (fn[x]
+                 (cuenta v x))v)))
