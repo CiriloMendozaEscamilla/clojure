@@ -1,44 +1,66 @@
 (defn mapeo[n](into [](sequence (str (or(and (integer? n)n)"n")))))
-
-(defn operacion[n p m](*(-(int((mapeo n)p))48)m))
-
-(defn operacion2[n] (+(-(int((mapeo n)0))48)(-(int((mapeo n)1))48)))
-
-(defn dijitos10[n] (or(and(or(= 10(count (into [](sequence (str (or(and (integer? n)n)"n"))))))))))
-
-(defn dos-dijitos?[n](= 2 (count (into[](sequence (str n))))))
-
-(defn dijitos11[n](or(and(or(= 11(count (into [](sequence (str (or(and (integer? n)n)"n"))))))))))
-
-//(defn redondeo[n](-(*(rem n 10)10)n))
-//(defn redondeo[n](-(*(+ 1(quot n 10))10)n))
-(defn redondeo[n]
-     (or(and (== 0(rem n 10)) 0)
-        (-(*(+ 1(quot n 10))10)n)))
-
-(defn cuando10[n](or(and (dijitos10 n)
-                                (+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
-                                  (or(and (dos-dijitos? (operacion n 1 2))(operacion2 (operacion n 1 2))) (operacion n 1 2))
-                                  (or(and (dos-dijitos? (operacion n 2 1))(operacion2 (operacion n 2 1))) (operacion n 2 1))
-                                  (or(and (dos-dijitos? (operacion n 3 2))(operacion2 (operacion n 3 2))) (operacion n 3 2))
-                                  (or(and (dos-dijitos? (operacion n 4 1))(operacion2 (operacion n 4 1))) (operacion n 4 1))
-                                  (or(and (dos-dijitos? (operacion n 5 2))(operacion2 (operacion n 5 2))) (operacion n 5 2))
-                                  (or(and (dos-dijitos? (operacion n 6 1))(operacion2 (operacion n 6 1))) (operacion n 6 1))
-                                  (or(and (dos-dijitos? (operacion n 7 2))(operacion2 (operacion n 7 2))) (operacion n 7 2))
-                                  (or(and (dos-dijitos? (operacion n 8 1))(operacion2 (operacion n 8 1))) (operacion n 8 1))
-                                  (or(and (dos-dijitos? (operacion n 9 2))(operacion2 (operacion n 9 2))) (operacion n 9 2)))
-                                )"nose"))
-
-(defn uando11[n](or(and (dijitos10 n)
-                                (+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
-                                  (or(and (dos-dijitos? (operacion n 1 2))(operacion2 (operacion n 1 2))) (operacion n 1 2))
-                                  (or(and (dos-dijitos? (operacion n 2 1))(operacion2 (operacion n 2 1))) (operacion n 2 1))
-                                  (or(and (dos-dijitos? (operacion n 3 2))(operacion2 (operacion n 3 2))) (operacion n 3 2))
-                                  (or(and (dos-dijitos? (operacion n 4 1))(operacion2 (operacion n 4 1))) (operacion n 4 1))
-                                  (or(and (dos-dijitos? (operacion n 5 2))(operacion2 (operacion n 5 2))) (operacion n 5 2))
-                                  (or(and (dos-dijitos? (operacion n 6 1))(operacion2 (operacion n 6 1))) (operacion n 6 1))
-                                  (or(and (dos-dijitos? (operacion n 7 2))(operacion2 (operacion n 7 2))) (operacion n 7 2))
-                                  (or(and (dos-dijitos? (operacion n 8 1))(operacion2 (operacion n 8 1))) (operacion n 8 1))
-                                  (or(and (dos-dijitos? (operacion n 9 2))(operacion2 (operacion n 9 2))) (operacion n 9 2))
-                                  (or(and (dos-dijitos? (operacion n 10 1))(operacion2 (operacion n 10 1))) (operacion n 10 1)))
-                                )"nose"))
+   
+   (defn operacion[n p m](*(-(int((mapeo n)p))48)m))
+   
+   (defn operacion2[n] (+(-(int((mapeo n)0))48)(-(int((mapeo n)1))48)))
+   
+   (defn dijitos10[n] (or(and(or(= 10(count (into [](sequence (str (or(and (integer? n)n)"n"))))))))))
+   
+   (defn dos-dijitos?[n](= 2 (count (into[](sequence (str n))))))
+   
+   (defn dijitos11[n](or(and(or(= 11(count (into [](sequence (str (or(and (integer? n)n)"n"))))))))))
+   
+   (defn redondeo[n]
+        (or(and (== 0(rem n 10)) 0)
+           (-(*(+ 1(quot n 10))10)n)))
+   
+   (defn cuando10[n](or(and (dijitos10 n)
+                                   (+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
+                                     (or(and (dos-dijitos? (operacion n 1 2))(operacion2 (operacion n 1 2))) (operacion n 1 2))
+                                     (or(and (dos-dijitos? (operacion n 2 1))(operacion2 (operacion n 2 1))) (operacion n 2 1))
+                                     (or(and (dos-dijitos? (operacion n 3 2))(operacion2 (operacion n 3 2))) (operacion n 3 2))
+                                     (or(and (dos-dijitos? (operacion n 4 1))(operacion2 (operacion n 4 1))) (operacion n 4 1))
+                                     (or(and (dos-dijitos? (operacion n 5 2))(operacion2 (operacion n 5 2))) (operacion n 5 2))
+                                     (or(and (dos-dijitos? (operacion n 6 1))(operacion2 (operacion n 6 1))) (operacion n 6 1))
+                                     (or(and (dos-dijitos? (operacion n 7 2))(operacion2 (operacion n 7 2))) (operacion n 7 2))
+                                     (or(and (dos-dijitos? (operacion n 8 1))(operacion2 (operacion n 8 1))) (operacion n 8 1))
+                                     (or(and (dos-dijitos? (operacion n 9 2))(operacion2 (operacion n 9 2))) (operacion n 9 2)))
+                                   )"nose"))
+   
+   (defn cuando11[n](or(and (dijitos10 n)
+                                   (+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
+                                     (or(and (dos-dijitos? (operacion n 1 2))(operacion2 (operacion n 1 2))) (operacion n 1 2))
+                                     (or(and (dos-dijitos? (operacion n 2 1))(operacion2 (operacion n 2 1))) (operacion n 2 1))
+                                     (or(and (dos-dijitos? (operacion n 3 2))(operacion2 (operacion n 3 2))) (operacion n 3 2))
+                                     (or(and (dos-dijitos? (operacion n 4 1))(operacion2 (operacion n 4 1))) (operacion n 4 1))
+                                     (or(and (dos-dijitos? (operacion n 5 2))(operacion2 (operacion n 5 2))) (operacion n 5 2))
+                                     (or(and (dos-dijitos? (operacion n 6 1))(operacion2 (operacion n 6 1))) (operacion n 6 1))
+                                     (or(and (dos-dijitos? (operacion n 7 2))(operacion2 (operacion n 7 2))) (operacion n 7 2))
+                                     (or(and (dos-dijitos? (operacion n 8 1))(operacion2 (operacion n 8 1))) (operacion n 8 1))
+                                     (or(and (dos-dijitos? (operacion n 9 2))(operacion2 (operacion n 9 2))) (operacion n 9 2))
+                                     (or(and (dos-dijitos? (operacion n 10 1))(operacion2 (operacion n 10 1))) (operacion n 10 1)))
+                                   )"nose"))
+   (defn cuando12[n](+(or(and (dos-dijitos? (operacion n 0 1))(operacion2 (operacion n 0 1))) (operacion n 0 1))
+                                        (or(and (dos-dijitos? (operacion n 1 2))(operacion2 (operacion n 1 2))) (operacion n 1 2))
+                                        (or(and (dos-dijitos? (operacion n 2 1))(operacion2 (operacion n 2 1))) (operacion n 2 1))
+                                        (or(and (dos-dijitos? (operacion n 3 2))(operacion2 (operacion n 3 2))) (operacion n 3 2))
+                                        (or(and (dos-dijitos? (operacion n 4 1))(operacion2 (operacion n 4 1))) (operacion n 4 1))
+                                        (or(and (dos-dijitos? (operacion n 5 2))(operacion2 (operacion n 5 2))) (operacion n 5 2))
+                                        (or(and (dos-dijitos? (operacion n 6 1))(operacion2 (operacion n 6 1))) (operacion n 6 1))
+                                        (or(and (dos-dijitos? (operacion n 7 2))(operacion2 (operacion n 7 2))) (operacion n 7 2))
+                                        (or(and (dos-dijitos? (operacion n 8 1))(operacion2 (operacion n 8 1))) (operacion n 8 1))
+                                        (or(and (dos-dijitos? (operacion n 9 2))(operacion2 (operacion n 9 2))) (operacion n 9 2))))
+   
+   ;*******************************************************************************************************
+   (defn dígito-verificador[n]
+            (or(and(or (dijitos10 n)(dijitos11 n))
+                   (or(and (dijitos10 n)
+                           (redondeo(cuando10 n)))
+                      (redondeo(cuando11 n))))-1))
+                     
+   (defn dígito-verificador-válido?[n s]
+        (or(and (== s (dígito-verificador n)))))
+   
+   (defn número-de-seguro-social-válido?[n]
+            (or(and(dijitos11 n)
+                   (==(redondeo(cuando12 n))(-(int((mapeo n)10))48)))))
