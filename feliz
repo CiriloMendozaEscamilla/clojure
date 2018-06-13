@@ -1,0 +1,25 @@
+(defn suma-de-cuadrados[n] 
+      (or(and (== 1 (count(sequence (str n))))  (*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48)))
+         (and (== 2 (count(sequence (str n))))(+(*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48))
+                                                (*(-(int((mapeo n)1))48)(-(int((mapeo n)1))48))))
+         (and (== 3 (count(sequence (str n))))(+(*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48))
+                                                (*(-(int((mapeo n)0))48)(-(int((mapeo n)1))48))
+                                                (*(-(int((mapeo n)0))48)(-(int((mapeo n)2))48))))))
+                                                
+(defn mapeo[n](into [](sequence (str (or(and (integer? n)n)"n")))))
+
+
+(defn suma-de-cuadrados[n] 
+      (or(and (== 3 (count(sequence (str n))))(+(*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48))
+                                                (*(-(int((mapeo n)1))48)(-(int((mapeo n)1))48))
+                                                (*(-(int((mapeo n)2))48)(-(int((mapeo n)2))48))))
+         (and (== 2 (count(sequence (str n))))(+(*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48))
+                                                (*(-(int((mapeo n)1))48)(-(int((mapeo n)1))48))))
+        (and (== 1 (count(sequence (str n))))  (*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48)))))
+        
+
+(defn feliz?[n](or(and (== 1(last(take 10 (iterate suma-de-cuadrados n)))))))
+
+(defn infeliz?[n](or(and (not= 1(last(take 10 (iterate suma-de-cuadrados n)))))))
+
+
