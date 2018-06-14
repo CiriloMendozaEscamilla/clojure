@@ -16,10 +16,12 @@
          (and (== 2 (count(sequence (str n))))(+(*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48))
                                                 (*(-(int((mapeo n)1))48)(-(int((mapeo n)1))48))))
         (and (== 1 (count(sequence (str n))))  (*(-(int((mapeo n)0))48)(-(int((mapeo n)0))48)))))
-        
+ (defn primo?[n]
+  (or(and (true? (some (fn[x](== x n))[1 2 3 5 7 13 19 23 31 79 97 103 109 139 167 193 239])) true)false))
 
 (defn feliz?[n](or(and (== 1(last(take 10 (iterate suma-de-cuadrados n)))))))
 
 (defn infeliz?[n](or(and (not= 1(last(take 10 (iterate suma-de-cuadrados n)))))))
 
-
+(defn primo-feliz? [n]
+     (or(and (feliz? n)(primo? n))))
