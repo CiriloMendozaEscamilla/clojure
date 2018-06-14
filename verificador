@@ -64,3 +64,37 @@
    (defn número-de-seguro-social-válido?[n]
             (or(and(dijitos11 n)
                    (==(redondeo(cuando12 n))(-(int((mapeo n)10))48)))))
+                   
+                   
+                   
+/________________________________________________________*________________________________________________________________
+
+(defn mapeo[n](into [](sequence (str (or(and (integer? n)n)"n")))))
+
+(defn suma-a-uno[n] 
+      (or(and (== 2 (count(sequence (str n))))
+      (+(-(int((mapeo n)0))48)(-(int((mapeo n)1))48))) n))
+      
+      
+=> ((fn[x]
+      (or(and (== 0 (rem x 2))
+              (suma-a-uno(* 1([2 3 4 5 6 7 8] x))))
+         (suma-a-uno(* 2 ([2 3 4 5 6 7 8] x)))))5)
+5
+=> ((fn[x]
+      (or(and (== 0 (rem x 2))
+              (suma-a-uno(* 1([2 3 4 5 6 7 8] x))))
+         (suma-a-uno(* 2 ([2 3 4 5 6 7 8] x)))))6)
+8
+=> (iterate (fn[x]
+              (or(and (== 0 (rem x 2))
+                      (suma-a-uno(* 1([2 3 4 5 6 7 8] x))))
+                 (suma-a-uno(* 2 ([2 3 4 5 6 7 8] x))))) [0 1 2 3 4 5 6])
+([0
+ClassCastException clojure.lang.PersistentVector cannot be cast to java.lang.Number  clojure.lang.Numbers.remainder (Numbers.java:173)
+=> (map (fn[x]
+          (or(and (== 0 (rem x 2))
+                  (suma-a-uno(* 1([2 3 4 5 6 7 8] x))))
+             (suma-a-uno(* 2 ([2 3 4 5 6 7 8] x))))) [0 1 2 3 4 5 6])
+
+
